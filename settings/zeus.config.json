@@ -1,0 +1,35 @@
+{
+  "embeds": {
+    "title": "",
+    "delete_after": 30,
+    "footer_url": ""
+  },
+
+  "bot": {
+    "prefix": ">",
+    "token": "",
+    "presence": true,
+    "delete": true,
+    "sniper": true,
+    "log": true
+  },
+
+  "presence": {
+    "state": "root@zeus~$",
+    "details": "Ballin'", 
+    "hover_big": "DM .k#1999 or charge#0666",
+    "hover_small": "Zeus Selfbot"
+  },
+
+  "logging": {
+    "keywords": [
+      
+    ],
+    "user_ids": [
+      
+    ],
+    "guild_ids": [
+
+    ]
+  }
+} 

@@ -1,0 +1,26 @@
+{
+    "embeds": {
+      "title": "charges new selfbot",
+      "description": "",
+      "author": "",
+      "delete_after": 30,
+      "footer_url": "https://cdn.discordapp.com/attachments/752302121168273459/756293184128155689/d6a69718942655.562d1f879f31d.png",
+      "thumbnail": ""
+    },
+  
+    "bot": {
+      "prefix": "/",
+      "token": "Nzc2MDg3NTI4NzA0NDQyMzc4.X7KFtw.4UM79t7KVtNnr7rG4r0UPH1DCiQ",
+      "presence": true,
+      "delete": true,
+      "sniper": true
+    },
+  
+    "presence": {
+      "state": "root@zeus~$",
+      "details": "Ballin'", 
+      "hover_big": "DM .k#1999 or charge#0666",
+      "hover_small": "Zeus Selfbot"
+    }
+  } 
+  
