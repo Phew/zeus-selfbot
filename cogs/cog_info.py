@@ -219,6 +219,7 @@ class Info(commands.Cog):
     )
     if self.config.bot.delete:
       await ctx.message.delete()
+    
 
 # -- load the cog -- #
 def setup(bot):
