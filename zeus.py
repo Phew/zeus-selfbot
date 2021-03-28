@@ -13,6 +13,7 @@ import json
 
 # -- 3rd party libararies -- #
 import discord
+from colorama import *
 from discord.ext import commands
 from pypresence import Presence
 
@@ -31,14 +32,15 @@ CONFIG_FILE = SETTINGS_DIREC / 'zeus.config.json'
 ERROR_FILE_NAME =  LOG_DIREC  / 'zeus.errors.log'
 MESSAGE_LOG_FILE_NAME = LOG_DIREC / 'zeus.message-log.json'
 CLIENT_ID = ''
-
+zeus = discord.Client()
 
 # -- main class -- #
 class Zeus(commands.Bot):
   '''
   simple class that inherits from commands.Bot
   '''
-  
+  global banner
+  global ext
   def __init__(self, filename):
     self.rp = Presence(CLIENT_ID)
     self.config_file_name = filename
@@ -46,26 +48,32 @@ class Zeus(commands.Bot):
     self.embeds = None
     self.i = 0
 
+  def ext(self):
+    zeus = commands.Bot(
+    command_prefix=self.config.bot.prefix,
+    self_bot=True
+  )
+
   def load_config(self):
     # load the config and load the embeds
     self.config = Loader(self.config_file_name).load_config()
     self.embeds = Embeds(self.config)
   
-  def load_rp(self):
+ # def load_rp(self):
 
     # check if presence is set to true in the config file
-    if self.config.bot.presence:
+    #if self.config.bot.presence:
 
       # connect and update to config file values
-      self.rp.connect()
-      self.rp.update(
-        state=self.config.rp.state,
-        details=self.config.rp.details,
-        large_image='big',
-        small_image='small',
-        small_text=self.configr.rp.hover_small,
-        large_text=self.config.rp.hover_big
-      )
+     # self.rp.connect()
+      #self.rp.update(
+       # state=self.config.rp.state,
+       # details=self.config.rp.details,
+        #large_image='big',
+        #small_image='small',
+        #small_text=self.config.rp.hover_small,
+        #large_text=self.config.rp.hover_big
+      #)
 
   def init_error_n_message_log(self):
     
@@ -102,6 +110,21 @@ class Zeus(commands.Bot):
       datefmt=LOG_DATE_FMT,
       format=LOG_FMT
     )
+
+  def banner():
+    b = f'{Fore.CYAN}'
+    w = f'{Fore.WHITE}'
+    print(f'''
+                                {b}Zeus {w}Loaded!       
+                             {w}══════════════════════════════════════════════                            
+                                              {b}╔═╗╔═╗╦ ╦╔═╗
+                                              {b}╔═╝║╣ ║ ║╚═╗
+                                              {b}╚═╝╚═╝╚═╝╚═╝
+                             {w}══════════════════════════════════════════════
+    
+
+    
+    ''')
 
   def log_init(self):
     with open(MESSAGE_LOG_FILE_NAME, 'w') as f:
@@ -156,9 +179,9 @@ class Zeus(commands.Bot):
     # load all the cogs
     self._load()
     
-    if os.name == 'nt':
+    #if os.name == 'nt':
       # load rp
-      self.load_rp()
+      #self.load_rp()
 
   def go(self):
     super().remove_command('help')
@@ -179,10 +202,13 @@ async def reload(ctx):
   bot.refresh()
   
   # send confirmation
+  embed = discord.Embed(
+      title='**Reloaded**')
   await ctx.send(
-    'reloaded', 
-    delete_after=bot.config.embeds.delete_after
-  )
+      embed=embed
+    )
+
 
 # -- start running the bot -- #
+banner()
 bot.go()
