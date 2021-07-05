@@ -59,7 +59,7 @@ So That they can tell their friends that they made it and there is no way that t
 
 ### Highly Advanced
 - comes with an error log file so you can see what is happening under the hood
-- comes with a wide range of commands separated into different categorie's
+- comes with a wide range of commands separated into different categories
 
 #### Requirments
 - python 3.8.5 64 bit
