@@ -1,6 +1,6 @@
 # Zeus Selfbot - By .k and charge
 
-This Selfbot Is One Of The Most Advanced On The Market And It's cheap
+This Selfbot Is One Of The Most Advanced On The Market And It's open source
 
 Has Been Coded From Scratch With Users Experience in Mind
 
@@ -10,9 +10,9 @@ So That they can tell their friends that they made it and there is no way that t
 
 - Note: some of the networking commands only work as root (administrator on windows), (such as ping) so make sure to run it as so if you do not want undesired behavior
 
-## Dynamic Json Config
+## Dynamic configuration file
 
-- dynamic json config file
+- dynamic configuration file
 - to use the defualt for a value just remove it from the config file
 - note: the default for some values may be None meaning that if removed the value will not be used
 - all the possible values will be shown below
